@@ -32,7 +32,7 @@ data['Target'] = data['Target'].replace(4, 1)
 
 data = data[data['Target'].isin([0, 1])].reset_index(drop=True)
 
-# Take 50 samples of each class (100 total, 50% negative, 50% positive)
+# Take 1000 samples of each class (2000 total, 50% negative, 50% positive)
 samples_per_class = 1000
 balanced_data = pd.concat(
     [data[data['Target'] == label].sample(samples_per_class, random_state=42)
